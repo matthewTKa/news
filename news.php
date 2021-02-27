@@ -3,7 +3,7 @@ if(isset($_GET['news_id'])):
     $id = $_GET['news_id'];
     
     $connect = mysqli_connect('localhost','root','root','news');
-    $query = 'SELECT * FROM news_table where id_news = ' . $id;
+    $query = 'SELECT * FROM news_p where id_news = ' . $id;
 
     $result = mysqli_fetch_assoc(mysqli_query($connect,$query));
     ?>

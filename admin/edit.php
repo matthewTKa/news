@@ -3,14 +3,14 @@ $connect = mysqli_connect('localhost', 'root', 'root','news');
 
 if(isset($_GET['edit_id'])){
     $id = $_GET['edit_id'];
-    $data = 'SELECT * FROM news_table where id_news = ' . $id;
+    $data = 'SELECT * FROM news_p where id_news = ' . $id;
     $result = mysqli_fetch_assoc(mysqli_query($connect,$data));
     
     if(isset($_POST['edit'])){
         $title = $_POST['title'];
         $body = $_POST['body'];
         $author = $_POST['author'];
-        $query = 'UPDATE news_table SET title_news = "' . $title . '", body_news = "' . $body . '", author_news = "' . $author . '" where id_news = ' . $id;  ;
+        $query = 'UPDATE news_p SET title_news = "' . $title . '", body_news = "' . $body . '", author_news = "' . $author . '" where id_news = ' . $id;  ;
         mysqli_query($connect,$query);
         echo '<script>alert("Изменения внесены");</script>';
         exit("<meta http-equiv='refresh' content='0; url= /index.php'>");

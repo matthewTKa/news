@@ -4,20 +4,18 @@
 <body>
 <h1>Новости</h1>
     <?php
-    $result = mysqli_query($connection, 'SELECT * FROM news_table');
+    $result = mysqli_query($connection, 'SELECT * FROM news_p');
     foreach($row = mysqli_fetch_all($result) as $el):?>
+        <?php 
+        $new = new News($el[0],$el[1],$el[2],$el[3]);
+        ?>
         <div class="row">
-            <div class="title">
-                <h3>
-                <a href="news.php?news_id=<?=$el[0];?>"><?= $el[1]; ?></a>
-                </h3>    
-            </div>
-            <div class="text">
-                <p> <?= cutString($el[2], 175); ?> </p>
-            </div>
-            <div class="author">
-                <span>Подпись автора: <a href="#"><i><?= $el[3]; ?></i></a></span>
-            </div>
+            <?php
+            $new->getHead();
+            $new->getBody();
+            $new->getAuthor();
+
+            ?>            
         </div>
         <?php endforeach; ?>
 

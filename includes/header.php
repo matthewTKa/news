@@ -1,5 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/functions.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/core/News.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/core/Admin_news.php';
 $connection = mysqli_connect('localhost', 'root', 'root', 'news')
 ?>
 <!DOCTYPE html>
