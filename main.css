@@ -1,0 +1,22 @@
+.row {
+    background-color: beige;
+    padding: 5%;
+    border-radius: 3px;
+    transition: all .3s ease;
+}
+
+.row:hover {
+    background-color: darkgrey;
+}
+
+.title a {
+    color: #303030;
+}
+
+.text p {
+    font-size: 16px;
+}
+
+.author span {
+    font-size: 10px;
+}
